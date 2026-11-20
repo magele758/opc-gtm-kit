@@ -1,0 +1,29 @@
+{
+  "name": "opc-gtm-kit",
+  "version": "0.1.0",
+  "description": "Zero-dependency Go-To-Market (GTM) toolkit for One-Person Companies (OPC): high-conversion landing pages, lead-magnet banners, CWS MV3 & macOS compliance kits, AGPL license contamination auditing, 5-channel UTM content repurposing, SQLite waitlist/drip engine, and opc-os + data_analysis bridges.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "bin": {
+    "opc-gtm": "./src/cli.ts"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "files": [
+    "src",
+    "manifests",
+    "README.md",
+    "LICENSE",
+    ".env.example"
+  ],
+  "scripts": {
+    "start": "node src/cli.ts serve",
+    "test": "node --test src/*.test.ts",
+    "build:site": "node src/cli.ts build-site --out ./dist-site",
+    "audit:licenses": "node src/cli.ts audit-licenses"
+  }
+}

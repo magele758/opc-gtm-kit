@@ -1,0 +1,104 @@
+{
+  "product": "PageLens",
+  "slug": "pagelens-agent",
+  "displayName": "PageLens Agent",
+  "tagline": "BYOK 网页理解、结构化提取与受控填表 Chrome 侧栏",
+  "painPoint": "每天在复杂后台、文档与业务表单间反复复制粘贴，云端 AI 浏览器代理既昂贵又容易擅自误点提交敏感操作。",
+  "outcome": "在 Chrome 侧栏用自己的 API Key 瞬间理解长网页、按 JSON Schema 提取结构化表格，并在人类逐步确认护栏下安全完成受控填表。",
+  "distribution": "chrome_extension",
+  "licenseModel": "open_core_byok",
+  "repoRole": "open_core",
+  "spdx": "MIT",
+  "activationAction": "在侧栏完成首次网页结构化提取或受控表单填充预览",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "sidePanel",
+    "scripting"
+  ],
+  "permissionJustifications": {
+    "activeTab": "仅在用户呼出侧栏并发起分析或填表指令时读取当前活动页面 DOM 摘要。",
+    "storage": "本地存储用户自带模型 API Key、提取 Schema 模板与离线授权码。",
+    "sidePanel": "提供常驻不遮挡正文的 Chrome 原生侧边栏工作台，用于结构化结果预览与填表差异对比。",
+    "scripting": "在用户显式点击确认后，向当前活动页面表单控件注入受控字段值并高亮变更预览，永不自动点击最终支付或不可逆提交按钮。"
+  },
+  "byok": true,
+  "localFirst": true,
+  "highlights": [
+    "100% BYOK（Bring Your Own Key）：直连 OpenAI / Anthropic / Gemini / 本地 Ollama，零中间商 Token 溢价",
+    "Schema 级网页结构化提取：一键把杂乱网页列表、工单或详情页导出为干净 JSON / CSV / Markdown",
+    "受控填表护栏（Human-in-the-Loop）：先生成字段级 Diff 高亮预览，人工确认后才写入，杜绝盲目提交",
+    "Open-Core 透明架构：核心侧栏引擎开源可审计，Pro 解锁批量模板库与多步受控工作流"
+  ],
+  "workflowSteps": [
+    {
+      "step": 1,
+      "badge": "01 · Read",
+      "title": "打开 Chrome 侧栏一键蒸馏当前网页上下文",
+      "description": "自动清洗噪音 DOM，生成高信噪比结构化快照并直连你配置的本地或云端模型。"
+    },
+    {
+      "step": 2,
+      "badge": "02 · Extract",
+      "title": "按自定义模板提取结构化字段与数据表",
+      "description": "使用自然语言或固定字段模板瞬间抽取商品、论文、简历或后台工单结构化结果。"
+    },
+    {
+      "step": 3,
+      "badge": "03 · Controlled Fill",
+      "title": "预览表单 Diff 并受控一键回填",
+      "description": "逐项展示拟填入目标输入框的值与置信度，经你点击确认后精准回填，敏感提交始终由你掌控。"
+    }
+  ],
+  "pricing": {
+    "currency": "USD",
+    "tiers": [
+      {
+        "id": "oss_free",
+        "name": "OSS Free",
+        "priceUsd": 0,
+        "priceLabel": "$0",
+        "billingPeriod": "forever",
+        "offlineKeyEd25519": false,
+        "highlighted": false,
+        "ctaLabel": "免费获取开源版",
+        "features": [
+          "BYOK 网页摘要、问答与基础结构化提取",
+          "单页受控表单字段预览与回填",
+          "支持本地 Ollama / OpenAI 兼容接口",
+          "MIT 开源核心代码可自行构建审计"
+        ]
+      },
+      {
+        "id": "pro_buyout",
+        "name": "Pro Workflow Pack",
+        "priceUsd": 39,
+        "priceLabel": "$39",
+        "billingPeriod": "one_time",
+        "offlineKeyEd25519": true,
+        "highlighted": true,
+        "ctaLabel": "买断 Pro 版 ($39)",
+        "features": [
+          "可复用 JSON Schema 提取模板库与跨标签页汇总导出",
+          "复杂多步受控填表宏、字段映射记忆与审计日志",
+          "一次性买断 $39，Ed25519 离线签名密钥永久激活",
+          "零云端中转：所有页面数据只留在你的浏览器与自有模型之间"
+        ]
+      }
+    ]
+  },
+  "privacyPledge": {
+    "headline": "Open-Core 可审计代码 · 受控填表人工确认 · 网页正文零中转",
+    "points": [
+      "不设官方后端代理服务器，网页内容只从你的浏览器直发给你填写的模型端点或本机 Ollama。",
+      "所有表单写入均遵循受控预览机制，绝不自动触发转账、删除、外发邮件等不可逆动作。",
+      "开源核心透明可查，Pro 离线密钥基于 Ed25519 本地验签。"
+    ]
+  },
+  "links": {
+    "homeUrl": "https://opc.example.com/pagelens-agent",
+    "githubUrl": "https://github.com/opc-example/pagelens-agent",
+    "docsUrl": "https://opc.example.com/pagelens-agent/docs",
+    "changelogUrl": "https://opc.example.com/pagelens-agent/changelog"
+  }
+}

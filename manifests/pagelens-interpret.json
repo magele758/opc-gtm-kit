@@ -1,0 +1,120 @@
+{
+  "product": "PageLens",
+  "slug": "pagelens-interpret",
+  "displayName": "PageLens Interpret",
+  "tagline": "视频实时同声传译、纯享中文音频与后台配音预处理队列 Chrome 扩展",
+  "painPoint": "看外语技术演讲、生肉公开课与长视频时字幕割裂、机翻断句生硬，眼睛盯字幕就漏看代码与演示画面。",
+  "outcome": "一键开启浏览器内实时中文同声传译与纯享中文音轨，支持后台队列批量预处理配音，像听母语播客一样刷完硬核外语视频。",
+  "distribution": "chrome_extension",
+  "licenseModel": "freemium_offline_key",
+  "repoRole": "flagship_paid",
+  "spdx": "LicenseRef-Proprietary",
+  "activationAction": "首次完成一段视频实时同传或导出中文配音",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "offscreen",
+    "tabCapture"
+  ],
+  "permissionJustifications": {
+    "activeTab": "仅在用户主动点击扩展图标开启当前视频同传时，获取当前活动标签页的视频元信息与播放时间轴。",
+    "storage": "在浏览器本地安全存储用户的模型配置、BYOK API 密钥、配音偏好与 Ed25519 离线授权凭证，不同步至第三方广告服务器。",
+    "offscreen": "在 Manifest V3 Service Worker 架构下创建隔离 Offscreen Document，用于低延迟音频重采样、混音与中文语音合成播放。",
+    "tabCapture": "仅在用户显式点击开始同传后捕获当前视频标签页音频流以执行实时语音识别与原声闪避（Ducking），不后台静默录制。"
+  },
+  "byok": true,
+  "localFirst": true,
+  "highlights": [
+    "实时同声传译 + 原声自动闪避（Audio Ducking），保留演讲者现场感同时清晰听懂中文",
+    "纯享中文音频模式：静音原外语音轨，输出自然断句的高拟真中文配音",
+    "后台配音预处理队列：提前排队处理长视频与系列课程，点开即享零等待丝滑播放",
+    "支持 BYOK 自有模型密钥与 Ed25519 离线公钥校验，买断制无强制云账号锁定"
+  ],
+  "workflowSteps": [
+    {
+      "step": 1,
+      "badge": "01 · Capture",
+      "title": "点开任意外语视频并激活当前标签页",
+      "description": "无需授予全网宽泛权限，点击扩展按钮即可基于 activeTab + tabCapture 接入当前视频音轨与时间轴。"
+    },
+    {
+      "step": 2,
+      "badge": "02 · Interpret",
+      "title": "选择实时同传或加入后台配音队列",
+      "description": "边看边听低延迟中文同传，或将多集长视频推入后台预处理队列，智能语义断句并合成自然中文配音。"
+    },
+    {
+      "step": 3,
+      "badge": "03 · Pure Audio",
+      "title": "切换纯享中文音频或导出复习音轨",
+      "description": "一键切换原声混合/纯享中文音轨，或导出合成后的中文学习音频随时离线复听。"
+    }
+  ],
+  "pricing": {
+    "currency": "USD",
+    "tiers": [
+      {
+        "id": "free",
+        "name": "Free Starter",
+        "priceUsd": 0,
+        "priceLabel": "$0",
+        "billingPeriod": "forever",
+        "offlineKeyEd25519": false,
+        "highlighted": false,
+        "ctaLabel": "免费安装扩展",
+        "features": [
+          "每日基础时长视频实时同声传译",
+          "支持 BYOK 自带语音识别与翻译 API Key",
+          "原声闪避与双语时间轴对照",
+          "100% 本地配置存储，零遥测追踪"
+        ]
+      },
+      {
+        "id": "pro_yearly",
+        "name": "Pro Annual",
+        "priceUsd": 19,
+        "priceLabel": "$19 / yr",
+        "billingPeriod": "yearly",
+        "offlineKeyEd25519": true,
+        "highlighted": false,
+        "ctaLabel": "订阅 Pro 年付 ($19/yr)",
+        "features": [
+          "无限时长实时同传与纯享中文音频模式",
+          "后台配音预处理队列与多视频批处理",
+          "支持导出中文配音音频与时间轴字幕",
+          "Ed25519 离线签名授权码，年内全版本更新"
+        ]
+      },
+      {
+        "id": "pro_buyout",
+        "name": "Pro Lifetime Buyout",
+        "priceUsd": 29,
+        "priceLabel": "$29 buyout",
+        "billingPeriod": "one_time",
+        "offlineKeyEd25519": true,
+        "highlighted": true,
+        "ctaLabel": "一次买断 Pro ($29)",
+        "features": [
+          "包含全部 Pro 功能：实时同传、纯享中文音频与后台预处理队列",
+          "一次性付款 $29 买断，无自动续费焦虑",
+          "Ed25519 非对称离线授权校验，断网或无中心服务器仍可永久验签激活",
+          "最多 3 台个人设备离线激活与优先工单支持"
+        ]
+      }
+    ]
+  },
+  "privacyPledge": {
+    "headline": "Local-First 音频管线 · 最小权限原则 · BYOK 密钥不出浏览器",
+    "points": [
+      "仅在点击激活时访问当前标签页（activeTab + tabCapture），绝不注入全站后台监控脚本。",
+      "BYOK 密钥仅保存在本地 chrome.storage.local，直连你自选的模型服务商，不经任何中间服务器留存。",
+      "Pro 授权采用 Ed25519 公钥本地离线验签，无需绑定个人隐私账号即可解锁完整能力。"
+    ]
+  },
+  "links": {
+    "homeUrl": "https://opc.example.com/pagelens-interpret",
+    "githubUrl": "https://github.com/opc-example/pagelens-interpret",
+    "docsUrl": "https://opc.example.com/pagelens-interpret/docs",
+    "changelogUrl": "https://opc.example.com/pagelens-interpret/changelog"
+  }
+}

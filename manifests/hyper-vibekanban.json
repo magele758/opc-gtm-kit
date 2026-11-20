@@ -1,0 +1,94 @@
+{
+  "product": "hyper-vibekanban",
+  "slug": "hyper-vibekanban",
+  "displayName": "Hyper VibeKanban",
+  "tagline": "本机多 Coding Agent 并行看板、Worktree 工厂与手机远程控制中心",
+  "painPoint": "同时开五六个终端跑 Coding Agent 时分支互相污染、审批卡死无人知晓，离开电脑后更无法安全查看 Diff 与拍板合并。",
+  "outcome": "把每张需求卡片自动映射为独立 Git Worktree，在本机看板并行编排多个 Coding Agent，并通过端到端受控手机控制中心随时审批、审阅 Diff 与一键收口。",
+  "distribution": "self_hosted_pro",
+  "licenseModel": "open_core",
+  "repoRole": "open_core",
+  "spdx": "Apache-2.0",
+  "activationAction": "创建首个隔离 Git Worktree 任务并并行调度 Coding Agent",
+  "permissions": [],
+  "permissionJustifications": {},
+  "byok": true,
+  "localFirst": true,
+  "highlights": [
+    "Git Worktree 自动化工厂：创建任务即生成隔离工作树与专属终端上下文，多 Agent 并行改代码零冲突",
+    "多 Coding Agent 统一状态看板：实时追踪运行中、待人工拍板、跑测失败与待合并任务流",
+    "手机远程控制中心（Remote Pro）：出门在外也能在手机端查看干净 Diff、回复关键决策并触发测试收口",
+    "Self-Hosted 优先架构：源代码仓库与 Agent 进程 100% 跑在你自己的开发机上"
+  ],
+  "workflowSteps": [
+    {
+      "step": 1,
+      "badge": "01 · Worktree Factory",
+      "title": "新建任务卡自动派生隔离 Git Worktree",
+      "description": "告别脏工作区与 stash 地狱，每个 Feature 拥有独立目录、分支与环境快照。"
+    },
+    {
+      "step": 2,
+      "badge": "02 · Parallel Agents",
+      "title": "并行派发多路 Coding Agent 并聚合阻塞信号",
+      "description": "同一看板实时观测各 Agent 进度、单测结果与待决提问，把注意力集中在高价值拍板上。"
+    },
+    {
+      "step": 3,
+      "badge": "03 · Mobile Command",
+      "title": "手机远程审阅 Diff、批准决策并干净合并",
+      "description": "离开工位时通过手机安全控制中心响应 Agent 提问，一键合并回主干并自动清理临时 Worktree。"
+    }
+  ],
+  "pricing": {
+    "currency": "USD",
+    "tiers": [
+      {
+        "id": "self_hosted_free",
+        "name": "Self-Hosted Free",
+        "priceUsd": 0,
+        "priceLabel": "$0",
+        "billingPeriod": "forever",
+        "offlineKeyEd25519": false,
+        "highlighted": false,
+        "ctaLabel": "免费自托管部署",
+        "features": [
+          "本机多 Coding Agent 并行看板与状态流转",
+          "自动化 Git Worktree 创建、Diff 预览与清理工厂",
+          "局域网/本机浏览器全功能访问",
+          "Apache-2.0 开源核心，支持任意 CLI Coding Agent"
+        ]
+      },
+      {
+        "id": "remote_pro",
+        "name": "Remote Pro",
+        "priceUsd": 49,
+        "priceLabel": "$49 / yr",
+        "billingPeriod": "yearly",
+        "offlineKeyEd25519": true,
+        "highlighted": true,
+        "ctaLabel": "开通 Remote Pro ($49/yr)",
+        "features": [
+          "手机端低延迟远程控制中心与移动端专属 Diff 审阅视图",
+          "Agent 阻塞提问/单测告警实时推送与一键远程拍板",
+          "多开发机工作区聚合视图与跨仓库编排模板",
+          "端到端加密通道 + Ed25519 授权验签，核心代码永不托管至第三方云"
+        ]
+      }
+    ]
+  },
+  "privacyPledge": {
+    "headline": "代码仓库永远留在你的开发机 · 远程控制仅传加密状态与受控指令",
+    "points": [
+      "Self-Hosted 核心无外部依赖，本机离线即可完整运行 Worktree 工厂与多 Agent 看板。",
+      "手机远程通道最小化暴露面，不在中继层落盘源码仓库或私密环境变量。",
+      "Apache-2.0 开放核心配合清晰商业扩展边界，无 AGPL 传染性陷阱。"
+    ]
+  },
+  "links": {
+    "homeUrl": "https://opc.example.com/hyper-vibekanban",
+    "githubUrl": "https://github.com/opc-example/hyper-vibekanban",
+    "docsUrl": "https://opc.example.com/hyper-vibekanban/docs",
+    "changelogUrl": "https://opc.example.com/hyper-vibekanban/changelog"
+  }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "rubiks-cube-learn",
+    "name": "Rubik's Cube Learn · 3D 魔方交互式教学",
+    "tagline": "零基础 3D 交互拆解层先法与 CFOP 公式演练免费在线工具",
+    "repoRole": "lead_magnet",
+    "spdx": "MIT",
+    "siteUrl": "https://opc.example.com/tools/rubiks-cube-learn",
+    "repoUrl": "https://github.com/opc-example/rubiks-cube-learn",
+    "targetProductSlug": "pagelens-interpret",
+    "utmCampaign": "lm_rubiks_cube_learn",
+    "hookText": "正在刷外语速拧魔方大神视频或海外公开课？用 PageLens Interpret 一键开启浏览器实时中文同传与纯享配音"
+  },
+  {
+    "slug": "bazi-ziwei-learning",
+    "name": "BaZi & ZiWei Learning · 八字紫微结构化研习工具",
+    "tagline": "传统典籍排盘结构化图谱、术语对照与交互式研习笔记免费工具",
+    "repoRole": "lead_magnet",
+    "spdx": "MIT",
+    "siteUrl": "https://opc.example.com/tools/bazi-ziwei-learning",
+    "repoUrl": "https://github.com/opc-example/bazi-ziwei-learning",
+    "targetProductSlug": "audiobook",
+    "utmCampaign": "lm_bazi_ziwei_learning",
+    "hookText": "想把古籍 PDF 与万字深度研习长文转成通勤随时听的播客？试试本地 Index-TTS 高拟真有声书工具 Audiobook"
+  }
+]
